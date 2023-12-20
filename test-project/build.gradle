@@ -1,6 +1,12 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
+
+jacoco {
+    toolVersion = "0.8.7"
+}
+
 
 repositories {
     mavenCentral()
@@ -14,6 +20,7 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
 
 }
 
